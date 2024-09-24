@@ -1,0 +1,8 @@
+use("platzi_store");
+
+db.users.insertOne({
+  name: "Alfonso",
+  email: "alfonso@mail.com",
+  password: "Pwd12345",
+  role: "admin",
+});
