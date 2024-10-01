@@ -1,0 +1,19 @@
+use("platzi_store");
+
+db.users.insertOne({
+  name: "Yohan",
+  email: "yohan@mail.com",
+  password: "Pwd12345",
+  role: "customer",
+  social_accounts: ["instagram", "facebook"],
+  address: {
+    street: "",
+    city: "Zipa",
+    zip: "",
+  },
+  shipping_address: {
+    street: "",
+    city: "Zipa",
+    zip: "",
+  },
+});
