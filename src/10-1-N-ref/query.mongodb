@@ -1,0 +1,21 @@
+use("platzi_store");
+
+db.orders.find();
+// db.orders.find({ user_id: ObjectId("66fc27eb88fe4ae6baa2ad33") }).count();
+// db.orders.find({ user_id: ObjectId("66fc2853d727f4fb7167970b") });
+
+db.orders.aggregate([
+  {
+    $match: {
+      _id: ObjectId("66fc2f5e8cf195eec5b1ce82"),
+    },
+  },
+  {
+    $lookup: {
+      from: "users",
+      localField: "user_id",
+      foreignField: "_id",
+      as: "userInfo",
+    },
+  },
+]);
